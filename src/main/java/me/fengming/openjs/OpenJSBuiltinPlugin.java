@@ -1,11 +1,11 @@
 package me.fengming.openjs;
 
 import me.fengming.openjs.plugin.IOpenJSPlugin;
-import me.fengming.openjs.plugin.IRegistry;
 
-public class OpenJSBulitinPlugin implements IOpenJSPlugin {
+public class OpenJSBuiltinPlugin implements IOpenJSPlugin {
     @Override
-    public void register(IRegistry<?> registry) {
-
+    public void load() {
+        registerBinding("System", System.class);
     }
+
 }

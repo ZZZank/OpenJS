@@ -1,4 +1,4 @@
-package me.fengming.openjs.script.bindings;
+package me.fengming.openjs.script;
 
 import me.fengming.openjs.plugin.IRegistration;
 

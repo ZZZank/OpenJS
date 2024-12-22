@@ -1,2 +1,4 @@
-package me.fengming.openjs.plugin;public interface IRegistration {
+package me.fengming.openjs.plugin;
+
+public interface IRegistration {
 }

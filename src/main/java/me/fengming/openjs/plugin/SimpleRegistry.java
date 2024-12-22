@@ -3,14 +3,24 @@ package me.fengming.openjs.plugin;
 import java.util.Set;
 import java.util.function.Consumer;
 
-public interface IRegistry<T extends IRegistration> {
+public class SimpleRegistry<T extends IRegistration> {
+    protected Set<T> set = Set.of();
+    protected String id;
 
-    Set<IRegistration> set = Set.of();
+    public SimpleRegistry(String id) {
+        this.id = id;
+    }
 
-    String getRegistryId();
-    default T register(T registration) {
+    public String getRegistryId() {
+        return id;
+    }
+
+    public T register(T registration) {
         set.add(registration);
         return registration;
     }
-    void apply(Consumer<T> consumer);
+
+    public void apply(Consumer<T> consumer) {
+        set.forEach(consumer);
+    }
 }
