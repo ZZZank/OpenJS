@@ -1,5 +1,7 @@
 package me.fengming.openjs.script;
 
+import me.fengming.openjs.utils.Cast;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +23,7 @@ public final class ScriptProperties {
     }
 
     public <T> T get(ScriptProperty<T> property) {
-        return (T) internal.get(property.ordinal);
+        return Cast.to(internal.get(property.ordinal));
     }
 
     public <T> T getOrDefault(ScriptProperty<T> property) {
