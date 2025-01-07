@@ -23,6 +23,7 @@ public class PackMode {
     }
 
     public static void set(String mode) {
+        //TODO: reload script on set
         Config.packMode = Objects.requireNonNull(mode);
     }
 

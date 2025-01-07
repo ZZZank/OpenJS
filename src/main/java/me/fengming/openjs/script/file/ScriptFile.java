@@ -46,7 +46,7 @@ public class ScriptFile {
 
     public boolean shouldEnable() {
         return properties.getOrDefault(ScriptProperty.ENABLE)
-            && properties.getOrDefault(ScriptProperty.PACKMODE).equals(PackMode.get())
+            && properties.get(ScriptProperty.PACKMODE).map(PackMode.get()::equals).orElse(true)
             && properties.getOrDefault(ScriptProperty.REQUIRE).stream().allMatch(ScriptFile::modLoaded);
     }
 

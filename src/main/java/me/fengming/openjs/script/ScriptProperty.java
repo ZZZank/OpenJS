@@ -30,7 +30,7 @@ public final class ScriptProperty<T> {
             .filter((str) -> !str.isEmpty())
             .toList()
     );
-    public static final ScriptProperty<String> PACKMODE = register("packmode", "default", Function.identity());
+    public static final ScriptProperty<String> PACKMODE = register("packmode", "*", Function.identity());
 
     public final String name;
     public final Integer ordinal;
