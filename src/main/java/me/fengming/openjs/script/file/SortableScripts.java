@@ -101,7 +101,7 @@ public class SortableScripts {
     }
 
     private Collection<SortableScript> dependenciesFromAfter(String after, Multimap<String, SortableScript> afterReferences) {
-        /*TODO
+        /*
         aaa/bbb -> depends on aaa/bbb.js
         aaa/bbb.js -> depends on aaa/bbb.js.js, I dont know why would users name their files as such, but anyway
         aaa/* -> depends on all files in aaa/

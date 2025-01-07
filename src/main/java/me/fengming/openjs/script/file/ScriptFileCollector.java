@@ -111,10 +111,10 @@ public class ScriptFileCollector {
             if (parts.length < 2) {
                 continue;
             }
-            var prop = ScriptProperty.get(parts[0].trim());
-            if (prop.isPresent()) {
-                var value = prop.get().read(parts[1].trim());
-                properties.put(Cast.to(prop.get()), value);
+            var prop = ScriptProperty.get(parts[0].trim()).orElse(null);
+            if (prop != null) {
+                var value = prop.read(parts[1].trim());
+                properties.put(Cast.to(prop), value);
             }
         }
     }

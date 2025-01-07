@@ -1,5 +1,6 @@
 package me.fengming.openjs;
 
+import me.fengming.openjs.binding.PackMode;
 import me.fengming.openjs.script.ScriptProperty;
 
 public class Config {
@@ -14,4 +15,5 @@ public class Config {
      * ignore {@link ScriptProperty#PRIORITY} if necessary
      */
     public static boolean strongPriority = false;
+    public static String packMode = PackMode.DEFAULT;
 }
