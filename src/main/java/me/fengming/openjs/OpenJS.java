@@ -13,10 +13,10 @@ public class OpenJS {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     /**
-     * game dir is null when in testing, so disable this for now to prevent NPE during class init
+     * game dir is null when in testing, so initialization is deferred to prevent NPE during class init
      * @see OpenJSPaths#GAMEDIR
      */
-//    public static final ScriptManager STARTUP_SCRIPT = new ScriptManager(ScriptType.STARTUP);
+    private static ScriptManager STARTUP_SCRIPT;
 
     public static void init() {
         // Load plugin
@@ -25,6 +25,11 @@ public class OpenJS {
 
         OpenJSPaths.check();
 
-//        STARTUP_SCRIPT.load();
+        STARTUP_SCRIPT = new ScriptManager(ScriptType.STARTUP);
+        STARTUP_SCRIPT.load();
+    }
+
+    public static ScriptManager getStartupScript() {
+        return STARTUP_SCRIPT;
     }
 }
